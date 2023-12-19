@@ -9,11 +9,11 @@
 - npm install @storybook/builder-vite --save-dev
 - npx storybook@latest init
 
-### Install MSW
+### Reference / Install MSW
 
-Reference: https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib-msw
-Testing React Components: https://www.robinwieruch.de/react-testing-library/
-Vite MSW Browser: https://www.raisiqueira.io/drops/vite-msw
+- Reference: https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib-msw
+- Testing React Components: https://www.robinwieruch.de/react-testing-library/
+- Vite MSW Browser: https://www.raisiqueira.io/drops/vite-msw
 
 ### Tasks
 
