@@ -17,13 +17,12 @@ Vite MSW Browser: https://www.raisiqueira.io/drops/vite-msw
 
 ### Tasks
 
-- [-] Add storybook
-- [-] Add Jest Basic configuration
-- [-] Add react Testing Library
+- [x] Add storybook
+- [x] Add React Testing Library
 - [x] Add MSW
-- [x] Add json-server
+- [-] Add browser based mocking
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
 
