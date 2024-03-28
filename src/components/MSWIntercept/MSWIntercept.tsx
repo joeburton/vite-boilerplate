@@ -1,25 +1,18 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-
-// interface Todo {
-//   id: string;
-//   listName: string;
-//   title: string;
-//   detail: string;
-//   complete: boolean;
-//   date: string;
-// }
+import List, { JobsInterface } from "../List/List";
 
 const MSWIntercept = ({ url }: { url: string }) => {
-  const [data, setData] = useState<any>();
+  const [projects, setData] = useState<JobsInterface[]>();
 
   useEffect(() => {
     async function getData() {
       try {
         const response = await axios.get(url);
-        setData(response);
+        if (!Array.isArray(response.data)) throw Error("data is not an array");
+        setData(response.data);
       } catch (error) {
-        console.error(error);
+        throw Error("error fetching data");
       }
     }
 
@@ -31,15 +24,9 @@ const MSWIntercept = ({ url }: { url: string }) => {
       <h2>Fetch Data</h2>
 
       <ul data-testid='select-list'>
-        {data && (
+        {projects && Array.isArray(projects) && (
           <div data-testid='list'>
-            {data?.data.map((item: any) => {
-              return (
-                <li data-testid={item._id} key={Math.random()}>
-                  {item?.role}
-                </li>
-              );
-            })}
+            <List data={projects} listName='Projects' />
           </div>
         )}
       </ul>

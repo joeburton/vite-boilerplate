@@ -4,15 +4,16 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 import MSWIntercept from "./components/MSWIntercept/MSWIntercept";
+import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 
 function App() {
   const [count, setCount] = useState(0);
 
   // env variables
-  // console.log(import.meta.env.MODE);
-  // console.log(import.meta.env.BASE_URL);
-  // console.log(import.meta.env.PROD);
-  // console.log(import.meta.env.VITE_BANANA_MAN);
+  console.log(import.meta.env.MODE);
+  console.log(import.meta.env.BASE_URL);
+  console.log(import.meta.env.DEV);
+  console.log(import.meta.env.VITE_BANANA_MAN);
 
   return (
     <>
@@ -25,7 +26,9 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
-      <MSWIntercept url='http://joe-burton.com/api/source' />
+      <ErrorBoundary>
+        <MSWIntercept url='http://joe-burton.com/api/source' />
+      </ErrorBoundary>
       <div className='card'>
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}

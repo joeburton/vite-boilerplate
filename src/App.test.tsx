@@ -9,4 +9,8 @@ describe("App", () => {
     debug();
     expect(1 + 1).toBe(2);
   });
+  it("should render the vite logo", () => {
+    const { getByAltText } = render(<App />);
+    expect(getByAltText("Vite logo")).toBeInTheDocument();
+  });
 });

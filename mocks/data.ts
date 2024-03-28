@@ -30,3 +30,9 @@ export const listNames = [
   { listName: "Tech", id: "45712234" },
   { listName: "General", id: "1235675" },
 ];
+
+export const roles = [
+  { role: "Software Enginner" },
+  { role: "BA" },
+  { role: "QE" },
+];

@@ -1,15 +1,34 @@
-const List = ({ data, listName }: { data: String[]; listName: string }) => {
+import classes from "./List.module.css";
+
+export interface JobsInterface {
+  class?: string;
+  company?: string;
+  description?: string;
+  links?: null | string[];
+  logo?: string;
+  order?: number;
+  role: string;
+  skills?: string;
+  _id?: string;
+}
+
+const List = ({
+  data,
+  listName,
+}: {
+  data: JobsInterface[];
+  listName: string;
+}) => {
   return (
     <>
       <h2>{listName}</h2>
-      {console.log(data)}
-      <ul data-testid='select-list'>
+      <ul data-testid='select-list' className={classes.list}>
         {data && (
           <>
-            {data.map((item, _i) => {
+            {data.map((item) => {
               return (
                 <li data-testid={item} key={Math.random()}>
-                  {item}
+                  {item.role}
                 </li>
               );
             })}
