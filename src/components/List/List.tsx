@@ -1,6 +1,7 @@
+import { useState } from "react";
 import classes from "./List.module.css";
 
-export interface JobsInterface {
+export interface JobInterface {
   class?: string;
   company?: string;
   description?: string;
@@ -9,14 +10,28 @@ export interface JobsInterface {
   order?: number;
   role: string;
   skills?: string;
-  _id?: string;
+  _id: string;
 }
+
+const ListItem = ({ id, role }: { id: string; role: string }) => {
+  const [showId, setShowId] = useState(false);
+
+  const displayId = () => {
+    setShowId(!showId);
+  };
+
+  return (
+    <li data-testid={id} onClick={displayId}>
+      {role}, {showId && id}
+    </li>
+  );
+};
 
 const List = ({
   data,
   listName,
 }: {
-  data: JobsInterface[];
+  data: JobInterface[];
   listName: string;
 }) => {
   return (
@@ -26,11 +41,7 @@ const List = ({
         {data && (
           <>
             {data.map((item) => {
-              return (
-                <li data-testid={item} key={Math.random()}>
-                  {item.role}
-                </li>
-              );
+              return <ListItem id={item._id} role={item.role} key={item._id} />;
             })}
           </>
         )}
