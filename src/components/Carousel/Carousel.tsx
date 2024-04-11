@@ -4,7 +4,7 @@ import styles from "./Carousel.module.css";
 export const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const numberSlides = 13;
+  const numberSlides = 5;
 
   const previous = () => {
     setCurrentIndex((prevIndex) =>
@@ -31,14 +31,6 @@ export const Carousel = () => {
           <li>item 3</li>
           <li>item 4</li>
           <li>item 5</li>
-          <li>item 6</li>
-          <li>item 7</li>
-          <li>item 8</li>
-          <li>item 9</li>
-          <li>item 10</li>
-          <li>item 11</li>
-          <li>item 12</li>
-          <li>item 13</li>
         </ul>
       </div>
       <div className={styles.carouselNavigation}>

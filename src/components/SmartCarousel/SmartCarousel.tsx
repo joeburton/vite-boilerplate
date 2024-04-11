@@ -21,35 +21,29 @@ const CarouselItem = ({ image, description }: Item) => {
 };
 
 export const SmartCarousel = ({ items }: CarouselInterface) => {
-  const [itemPosition, setItemPosition] = useState<number>(1);
+  const [itemPosition, setItemPosition] = useState<number>(0);
 
   const eleRef = useRef(null) as any;
 
   const previous = () => {
-    if (itemPosition === 1) return;
-    eleRef.current.style.transform = `translateX(-${itemPosition - 2}00%)`;
+    if (itemPosition === 0) return;
+    eleRef.current.style.transform = `translateX(-${itemPosition - 1}00%)`;
     setItemPosition((prevState) => prevState - 1);
   };
 
   const next = () => {
-    if (itemPosition === 5) return;
-    eleRef.current.style.transform = `translateX(-${100 * itemPosition}%)`;
+    if (itemPosition === items.length - 1) return;
+    eleRef.current.style.transform = `translateX(-${itemPosition + 1}00%)`;
     setItemPosition((prevState) => prevState + 1);
   };
 
   const moveSlideToNewPos = (slidePos: number) => {
+    console.log(slidePos);
     if (itemPosition === slidePos) return;
-
-    if (slidePos < itemPosition) {
-      eleRef.current.style.transform = `translateX(-${slidePos - 1}00%)`;
-    } else {
-      eleRef.current.style.transform = `translateX(-${100 * (slidePos - 1)}%)`;
-    }
+    eleRef.current.style.transform = `translateX(-${slidePos}00%)`;
 
     setItemPosition(slidePos);
   };
-
-  console.log("Carousel state update.", itemPosition);
 
   return (
     <>
@@ -69,9 +63,9 @@ export const SmartCarousel = ({ items }: CarouselInterface) => {
       <ul className={styles.tracker}>
         {items.map((_item, i) => (
           <li
-            className={`${itemPosition === i + 1 ? styles.green : styles.red}`}
+            className={`${itemPosition === i ? styles.green : styles.red}`}
             key={i}
-            onClick={() => moveSlideToNewPos(i + 1)}
+            onClick={() => moveSlideToNewPos(i)}
           ></li>
         ))}
       </ul>
