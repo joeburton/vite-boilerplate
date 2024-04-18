@@ -40,8 +40,8 @@ const List = ({
       <ul data-testid='select-list' className={classes.list}>
         {data && (
           <>
-            {data.map((item) => {
-              return <ListItem id={item._id} role={item.role} key={item._id} />;
+            {data.map((item, i) => {
+              return <ListItem id={item._id} role={item.role} key={i} />;
             })}
           </>
         )}
