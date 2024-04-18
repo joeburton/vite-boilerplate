@@ -1,9 +1,21 @@
 import "./css/app.css";
 
+import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
 import MSWIntercept from "./components/MSWIntercept/MSWIntercept";
-import ErrorBoundary from "./components/ErrorBoundary/ErrorBoundary";
 import { Carousel } from "./components/Carousel";
 import { SmartCarousel } from "./components/SmartCarousel";
+
+function ErrorFallback({ error }: { error: any }) {
+  const { resetBoundary } = useErrorBoundary();
+
+  return (
+    <div role='alert'>
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>{error.message}</pre>
+      <button onClick={resetBoundary}>Try again</button>
+    </div>
+  );
+}
 
 function App() {
   // env variables
@@ -45,7 +57,7 @@ function App() {
           },
         ]}
       />
-      <ErrorBoundary>
+      <ErrorBoundary FallbackComponent={ErrorFallback}>
         <MSWIntercept url='http://joe-burton.com/api/source' />
       </ErrorBoundary>
     </>

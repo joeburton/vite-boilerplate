@@ -1,23 +1,30 @@
 import { useEffect, useState } from "react";
+import { useErrorBoundary } from "react-error-boundary";
+
 import List, { JobInterface } from "../List/List";
 
 const MSWIntercept = ({ url }: { url: string }) => {
   const [projects, setData] = useState<JobInterface[]>();
+  const { showBoundary } = useErrorBoundary();
 
   useEffect(() => {
     async function getData() {
       try {
         const response = await fetch(url);
         const data = await response.json();
-        if (!Array.isArray(data)) throw Error("data is not an array");
-        setData(data);
+        if (!Array.isArray(data)) {
+          throw new Error("Data format incorrect");
+        } else {
+          setData(data);
+        }
       } catch (error) {
-        throw Error("error fetching data");
+        showBoundary(error);
       }
     }
 
     getData();
-  }, [url]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>

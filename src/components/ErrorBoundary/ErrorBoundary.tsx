@@ -1,35 +1,47 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-interface ErrorBoundaryProps {
-  children: React.ReactNode;
+interface State {
+  hasError: boolean;
+  error: Error | null;
+  errorInfo: React.ErrorInfo | null;
 }
 
-const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
-  const [hasError, setHasError] = useState<boolean>(false);
-
-  useEffect(() => {
-    const errorHandler = (error: ErrorEvent) => {
-      console.error("Error caught by ErrorBoundary:", error);
-      setHasError(true);
+class ErrorBoundary extends React.Component<{}, State> {
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      hasError: false,
+      error: null,
+      errorInfo: null,
     };
-
-    window.addEventListener("error", errorHandler);
-
-    return () => {
-      window.removeEventListener("error", errorHandler);
-    };
-  }, []);
-
-  if (hasError) {
-    return (
-      <div style={{ textAlign: "center", padding: "20px" }}>
-        <h2>Something went wrong.</h2>
-        <p>Please refresh the page or try again later.</p>
-      </div>
-    );
   }
 
-  return <>{children}</>;
-};
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
+    this.setState({
+      errorInfo,
+    });
+    console.error("Error:", error, errorInfo);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div>
+          <h1>Something went wrong.</h1>
+          <details style={{ whiteSpace: "pre-wrap" }}>
+            {this.state.error && this.state.error.toString()}
+            <br />
+            {this.state.errorInfo?.componentStack}
+          </details>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 export default ErrorBoundary;
