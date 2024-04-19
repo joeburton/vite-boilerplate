@@ -1,5 +1,6 @@
 import { useState } from "react";
 import classes from "./List.module.css";
+import { generateUniqueId } from "../../utils";
 
 export interface JobInterface {
   class?: string;
@@ -22,7 +23,7 @@ const ListItem = ({ id, role }: { id: string; role: string }) => {
 
   return (
     <li data-testid={id} onClick={displayId}>
-      {role}, {showId && id}
+      {role} {showId && ` - ${id}`}
     </li>
   );
 };
@@ -41,7 +42,13 @@ const List = ({
         {data && (
           <>
             {data.map((item, i) => {
-              return <ListItem id={item._id} role={item.role} key={i} />;
+              return (
+                <ListItem
+                  id={item._id}
+                  role={item.role}
+                  key={generateUniqueId()}
+                />
+              );
             })}
           </>
         )}
