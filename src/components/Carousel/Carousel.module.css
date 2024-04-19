@@ -1,8 +1,7 @@
 .carousel {
-  margin: 20px auto 20px auto;
+  margin: 0 auto;
   overflow: hidden;
   width: 100px;
-  height: 100%;
   display: flex;
 }
 
@@ -25,7 +24,11 @@
 }
 
 .carousel ul li:nth-child(odd) {
-  background-color: #eeeeee;
+  background-color: rgb(238, 194, 194);
+}
+
+.carousel ul li:nth-child(even) {
+  background-color: rgb(149, 125, 125);
 }
 
 .carouselNavigation {

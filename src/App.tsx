@@ -1,6 +1,6 @@
-import "./css/app.css";
-
 import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
+import { Box, SimpleGrid } from "@chakra-ui/react";
+
 import MSWIntercept from "./components/MSWIntercept/MSWIntercept";
 import { Carousel } from "./components/Carousel";
 import { SmartCarousel } from "./components/SmartCarousel";
@@ -28,14 +28,22 @@ function App() {
   console.log(import.meta.env.VITE_CHIEF);
 
   return (
-    <>
-      <h1>Vite + React</h1>
-      <Carousel />
-      <SmartCarousel items={items} />
-      <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <MSWIntercept url='http://joe-burton.com/api/source' />
-      </ErrorBoundary>
-    </>
+    <SimpleGrid columns={1} spacing={8}>
+      <Box bg='lightgrey' height='auto'>
+        <h1>Vite + React</h1>
+      </Box>
+      <Box height='auto'>
+        <Carousel />
+      </Box>
+      <Box height='auto' margin='0 auto'>
+        <SmartCarousel items={items} />
+      </Box>
+      <Box bg='grey' height='auto'>
+        <ErrorBoundary FallbackComponent={ErrorFallback}>
+          <MSWIntercept url='http://joe-burton.com/api/source' />
+        </ErrorBoundary>
+      </Box>
+    </SimpleGrid>
   );
 }
 
