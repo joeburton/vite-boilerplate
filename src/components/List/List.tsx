@@ -41,7 +41,7 @@ const List = ({
       <ul data-testid='select-list' className={classes.list}>
         {data && (
           <>
-            {data.map((item, i) => {
+            {data.map((item) => {
               return (
                 <ListItem
                   id={item._id}
