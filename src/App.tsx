@@ -1,5 +1,5 @@
 import { ErrorBoundary, useErrorBoundary } from "react-error-boundary";
-import { Box, SimpleGrid } from "@chakra-ui/react";
+import { Box, Grid, GridItem, SimpleGrid } from "@chakra-ui/react";
 
 import MSWIntercept from "./components/MSWIntercept/MSWIntercept";
 import { Carousel } from "./components/Carousel";
@@ -43,6 +43,32 @@ function App() {
           <MSWIntercept url='http://joe-burton.com/api/source' />
         </ErrorBoundary>
       </Box>
+      <Grid templateColumns='repeat(5, 1fr)' gap={6}>
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+        <GridItem w='100%' h='10' bg='blue.500' />
+      </Grid>
+      <Grid
+        h='300px'
+        templateRows='repeat(2, 1fr)'
+        templateColumns='repeat(5, 1fr)'
+        gap={4}
+      >
+        <GridItem rowSpan={2} colSpan={1} bg='tomato'>
+          1
+        </GridItem>
+        <GridItem colSpan={2} bg='papayawhip'>
+          2
+        </GridItem>
+        <GridItem colSpan={2} bg='papayawhip'>
+          3
+        </GridItem>
+        <GridItem colSpan={4} bg='tomato'>
+          4
+        </GridItem>
+      </Grid>
     </SimpleGrid>
   );
 }
