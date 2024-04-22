@@ -3,9 +3,9 @@ import { ChakraProvider } from "@chakra-ui/react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-import Root from "./routes/root";
-import Work from "./routes/work";
-import Contact from "./routes/contact";
+import Root from "./routes/root/root";
+import Work from "./routes/work/work";
+import Contact from "./routes/contact/contact";
 
 import ErrorPage from "./pages/error-page";
 

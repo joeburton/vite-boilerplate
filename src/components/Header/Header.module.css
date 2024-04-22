@@ -1,3 +1,8 @@
+.header {
+  border-bottom: 1px solid #ccc;
+  min-height: 100px;
+  padding: 20px 20px 40px 20px;
+}
 .introHeader {
   margin: 20px 0 20px;
 }

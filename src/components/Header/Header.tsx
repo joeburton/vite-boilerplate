@@ -9,8 +9,16 @@ const rule = {
 
 export const Header = () => {
   return (
-    <h1 style={rule} className={styles.introHeader}>
-      <span>Welcome</span>
-    </h1>
+    <div className={styles.header}>
+      <h1 style={rule} className={styles.introHeader}>
+        <span>Welcome</span>
+      </h1>
+      <div>
+        <h2>
+          My name is <span>Joe Burton</span>, I'm a Web Developer.
+        </h2>
+        <h3>This is my portfolio and online playground.</h3>
+      </div>
+    </div>
   );
 };
