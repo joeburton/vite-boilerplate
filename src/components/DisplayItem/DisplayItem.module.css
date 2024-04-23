@@ -1,0 +1,16 @@
+.cardBody img {
+  margin-bottom: 20px;
+}
+
+.cardBody p {
+  border-top: dashed 1px #ccc;
+  padding: 8px 0 8px 0;
+  color: #393934;
+}
+
+.cardBody a {
+  display: flex;
+  border-top: dashed 1px #ccc;
+  padding: 8px 0 0 0;
+  color: #393934;
+}
