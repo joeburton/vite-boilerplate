@@ -1,24 +1,41 @@
 import styles from "./Header.module.css";
+import { Text } from "@chakra-ui/react";
 
 import ruleImage from "../../assets/line.png";
 
 const rule = {
   background: `url(${ruleImage}) repeat-x`,
-  backgroundPosition: "left 45px",
+  backgroundPosition: "left 40px",
 };
 
 export const Header = () => {
   return (
     <div className={styles.header}>
-      <h1 style={rule} className={styles.introHeader}>
+      <Text
+        fontSize='5xl'
+        fontWeight='slim'
+        textAlign='center'
+        style={rule}
+        className={styles.welcome}
+      >
         <span>Welcome</span>
-      </h1>
-      <div>
-        <h2>
-          My name is <span>Joe Burton</span>, I'm a Web Developer.
-        </h2>
-        <h3>This is my portfolio and online playground.</h3>
-      </div>
+      </Text>
+      <Text
+        fontSize='2xl'
+        fontWeight='slim'
+        className={styles.introText}
+        textAlign='center'
+      >
+        My name is <span>Joe Burton</span>, I'm a Web Developer.
+      </Text>
+      <Text
+        fontSize='2xl'
+        fontWeight='slim'
+        className={styles.introText}
+        textAlign='center'
+      >
+        This is my portfolio and online playground.
+      </Text>
     </div>
   );
 };

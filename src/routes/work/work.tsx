@@ -1,12 +1,21 @@
+import { Text } from "@chakra-ui/react";
 import styles from "./work.module.css";
 
-import { Card } from "../../components/Card";
+import { DisplayItem } from "../../components/DisplayItem";
 
 export default function Work() {
   return (
     <div className={styles.work}>
-      <h2>Work and Projects</h2>
-      <Card />
+      <Text
+        fontSize='3xl'
+        fontWeight='slim'
+        textAlign='center'
+        color='#95c50e'
+        mb='6'
+      >
+        Work and Projects
+      </Text>
+      <DisplayItem />
     </div>
   );
 }

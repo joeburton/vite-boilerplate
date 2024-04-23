@@ -1,5 +1,7 @@
 import { useRouteError } from "react-router-dom";
+import { Text } from "@chakra-ui/react";
 
+import styles from "./ErrorPage.module.css";
 interface RouteError {
   data: string;
   error: {
@@ -20,12 +22,31 @@ export default function ErrorPage() {
   console.error(error);
 
   return (
-    <div id='error-page'>
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
+    <div className={styles.errorPage}>
+      <Text
+        fontSize='6xl'
+        fontWeight='slim'
+        textAlign='center'
+        className={styles.message}
+      >
+        Oops!
+      </Text>
+      <Text
+        fontSize='2xl'
+        fontWeight='slim'
+        textAlign='center'
+        className={styles.subText}
+      >
+        Sorry, an unexpected error has occurred.
+      </Text>
+      <Text
+        fontSize='lg'
+        fontWeight='slim'
+        textAlign='center'
+        className={styles.subText}
+      >
         <i>{error.statusText || error.message}</i>
-      </p>
+      </Text>
     </div>
   );
 }
