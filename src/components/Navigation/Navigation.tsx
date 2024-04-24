@@ -16,7 +16,7 @@ export const Navigation = () => {
   };
 
   return (
-    <nav>
+    <nav className={styles.navigation}>
       <ul>
         <li>
           <NavLink

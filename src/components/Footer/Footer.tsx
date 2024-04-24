@@ -1,16 +1,13 @@
-import { Link } from "react-router-dom";
+import { Text } from "@chakra-ui/react";
+
+import styles from "./Footer.module.css";
 
 export const Footer = () => {
   return (
-    <nav>
-      <ul>
-        <li>
-          <Link to={`work`}>Work</Link>
-        </li>
-        <li>
-          <Link to={`contact`}>Contact</Link>
-        </li>
-      </ul>
-    </nav>
+    <footer className={styles.footer}>
+      <p>
+        <Text fontSize='sm'>© JB</Text>
+      </p>
+    </footer>
   );
 };

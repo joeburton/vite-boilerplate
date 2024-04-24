@@ -1,4 +1,4 @@
-nav {
+.navigation {
   background-color: #2f4f4f;
   color: aliceblue;
   border-top: 0;
@@ -6,28 +6,28 @@ nav {
   height: 70px;
 }
 
-nav ul {
+.navigation ul {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
-nav ul li {
+.navigation ul li {
   display: flex;
 }
 
-nav ul li a {
+.navigation ul li a {
   padding: 8px;
   font-size: 18px;
 }
 
-nav ul li a.active {
+.navigation ul li a.active {
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
-nav ul li a:hover {
+.navigation ul li a:hover {
   color: #95c50e;
   transition: color 0.2s, background-color 0.2s;
 }
