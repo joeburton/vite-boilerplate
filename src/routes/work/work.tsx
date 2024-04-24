@@ -4,6 +4,12 @@ import styles from "./work.module.css";
 import { DisplayItem } from "../../components/DisplayItem";
 
 export default function Work() {
+  const links = [
+    {
+      visual: "www.publicissapient.com",
+      url: "https://www.publicissapient.com",
+    },
+  ];
   return (
     <div className={styles.work}>
       <Text
@@ -15,7 +21,15 @@ export default function Work() {
       >
         Work and Projects
       </Text>
-      <DisplayItem />
+      <DisplayItem
+        logo='publicissapient.png'
+        role='Manager / Front-end Lead'
+        company='Publicis Sapient'
+        description='<p>Hands-on Front-end Lead / People Manager</p>'
+        skills='React, Remix, Vite, NodeJS, GraphQL, NextJS, Jest, React Testing Library, styled-components, Storybook, CSS, SASS'
+        className='publicis-sapient'
+        links={links}
+      />
     </div>
   );
 }
