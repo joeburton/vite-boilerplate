@@ -1,10 +1,15 @@
 import { Card, Image, CardBody, Text, Link, Box } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
+import {
+  ExternalLinkIcon,
+  ChevronDownIcon,
+  ChevronUpIcon,
+} from "@chakra-ui/icons";
 import parse from "html-react-parser";
 
 import { generateUniqueId, getImageUrl } from "../../utils";
 
 import styles from "./DisplayItem.module.css";
+import { useState } from "react";
 
 interface Links {
   visual: string;
@@ -32,6 +37,8 @@ export const DisplayItem = ({
   className,
   links,
 }: DisplayItemInterface) => {
+  const [open, setOpen] = useState(false);
+
   return (
     <Box width={{ base: "100%", lg: "33.3%" }}>
       <Card
@@ -57,9 +64,23 @@ export const DisplayItem = ({
           <Text fontSize='sm' className={styles.contentItem}>
             Skills: {parse(skills)}
           </Text>
-          <Text fontSize='sm' className={styles.contentItem}>
+          <Text
+            as='div'
+            fontSize='sm'
+            className={`${styles.contentItem} ${styles.description} `}
+            style={{ height: open ? `100%` : `70px` }}
+          >
             {parse(description)}
           </Text>
+          <Link
+            fontSize='sm'
+            display='block'
+            p='8px 0'
+            onClick={() => setOpen(!open)}
+          >
+            Expand{" "}
+            {open ? <ChevronUpIcon mx='6px' /> : <ChevronDownIcon mx='6px' />}
+          </Link>
           {links?.length &&
             links.map((link) => (
               <Link
@@ -67,8 +88,9 @@ export const DisplayItem = ({
                 href={link.url}
                 isExternal
                 key={generateUniqueId()}
+                className={styles.link}
               >
-                {link.visual} <ExternalLinkIcon mx='2px' />
+                {link.visual} <ExternalLinkIcon mx='6px' />
               </Link>
             ))}
         </CardBody>
