@@ -1,7 +1,7 @@
 export const projects = [
   {
-    order: 20,
     logo: "publicissapient.png",
+    logoSize: "small",
     role: "Manager / Front-end Lead",
     company: "Publicis Sapient",
     description:
@@ -17,8 +17,8 @@ export const projects = [
     ],
   },
   {
-    order: 19,
     logo: "worldfirst.png",
+    logoSize: "small",
     role: "Senior Software Engineer",
     company: "WorldFirst",
     description:
@@ -34,8 +34,8 @@ export const projects = [
     ],
   },
   {
-    order: 18,
     logo: "ge.png",
+    logoSize: "small",
     role: "Senior UI Developer",
     company: "GE Power Digital",
     description:
@@ -51,8 +51,8 @@ export const projects = [
     ],
   },
   {
-    order: 17,
     logo: "cashflows.png",
+    logoSize: "small",
     role: "Lead UI Developer",
     company: "CashFlows",
     description:
@@ -63,8 +63,8 @@ export const projects = [
     links: [{ visual: "www.cashflows.com", url: "https://www.cashflows.com/" }],
   },
   {
-    order: 16,
     logo: "boilerjuice.svg",
+    logoSize: "large",
     role: "Lead Front-end Developer",
     company: "Boiler Juice",
     description:
@@ -77,8 +77,8 @@ export const projects = [
     ],
   },
   {
-    order: 15,
     logo: "cambridge-assessment.svg",
+    logoSize: "medium",
     role: "Senior Front-end Developer",
     company: "Cambridge Assessment",
     description:
@@ -98,8 +98,8 @@ export const projects = [
     ],
   },
   {
-    order: 14,
     logo: "tribal-worldwide.jpeg",
+    logoSize: "small",
     role: "Senior Front-end Developer",
     company: "Tribal Worldwide",
     description:
@@ -120,8 +120,8 @@ export const projects = [
     ],
   },
   {
-    order: 13,
     logo: "helix.svg",
+    logoSize: "medium",
     role: "Senior Front-end Developer",
     company: "Freelance",
     description:
@@ -133,8 +133,8 @@ export const projects = [
     ],
   },
   {
-    order: 12,
     logo: "photobox.png",
+    logoSize: "medium",
     role: "Senior Front-end Developer",
     company: "Photobox",
     description:
@@ -147,8 +147,8 @@ export const projects = [
     ],
   },
   {
-    order: 11,
     logo: "lastminute.png",
+    logoSize: "small",
     role: "Senior Front-end Developer",
     company: "lastminute.com",
     description:
@@ -162,8 +162,8 @@ export const projects = [
     ],
   },
   {
-    order: 10,
     logo: "bauer.jpg",
+    logoSize: "small",
     role: "Front-end Developer",
     company: "Bauer Media",
     description:
@@ -177,8 +177,8 @@ export const projects = [
     ],
   },
   {
-    order: 9,
     logo: "jam-engine-group.png",
+    logoSize: "medium",
     role: "Senior UI Developer",
     company: "Jam - The Engine Group",
     description:
@@ -195,8 +195,8 @@ export const projects = [
     ],
   },
   {
-    order: 8,
     logo: "rank-interactive.jpeg",
+    logoSize: "small",
     role: "Lead Front-end Developer",
     company: "Rank Interactive",
     description:
@@ -207,8 +207,8 @@ export const projects = [
     links: [{ visual: "www.rank.com", url: "https://www.rank.com" }],
   },
   {
-    order: 7,
     logo: "sapient.png",
+    logoSize: "small",
     role: "Front-end Developer",
     company: "Sapient",
     description:
@@ -225,8 +225,8 @@ export const projects = [
     ],
   },
   {
-    order: 6,
     logo: "tyrrells-logo.svg",
+    logoSize: "medium",
     role: "Front-end Developer",
     company: "Freelance",
     description: "Tyrrells Crisps",
@@ -240,8 +240,8 @@ export const projects = [
     ],
   },
   {
-    order: 5,
-    logo: "addison.png",
+    logo: "addison-group.jpg",
+    logoSize: "small",
     role: "Front-end Developer",
     company: "Addison",
     description:
@@ -264,8 +264,8 @@ export const projects = [
     ],
   },
   {
-    order: 4,
     logo: "guardian.png",
+    logoSize: "small",
     className: "guardian-logo",
     role: "Front-end Developer",
     company: "Guardian",
@@ -281,8 +281,8 @@ export const projects = [
     ],
   },
   {
-    order: 3,
     logo: "qld.png",
+    logoSize: "medium",
     className: "qld-logo",
     role: "Developer",
     company: "Queensland Goverment",
@@ -294,8 +294,8 @@ export const projects = [
     ],
   },
   {
-    order: 2,
     logo: "ogilvy.png",
+    logoSize: "small",
     className: "ogilvy-logo",
     role: "Developer",
     company: "Ogilvy",

@@ -16,9 +16,18 @@ interface Links {
   url: string;
 }
 
+type LogoSize = "small" | "medium" | "large";
+
+const logoPixelWidth: { [K in LogoSize]: string } = {
+  small: "80px",
+  medium: "150px",
+  large: "200px",
+};
+
 export type DisplayItemInterface = {
   rowEnd?: boolean;
   logo: string;
+  logoSize: LogoSize;
   role: string;
   company: string;
   description: string;
@@ -30,6 +39,7 @@ export type DisplayItemInterface = {
 export const DisplayItem = ({
   rowEnd = false,
   logo,
+  logoSize,
   role,
   company,
   description,
@@ -48,11 +58,14 @@ export const DisplayItem = ({
         shadow='md'
         className={className}
       >
-        <CardBody className={styles.cardBody}>
+        <CardBody
+          className={styles.cardBody}
+          minHeight={{ base: "auto", lg: "500px" }}
+        >
           <Image
             src={getImageUrl(logo)}
             alt='Publicis Sapient'
-            maxWidth={100}
+            maxWidth={logoPixelWidth[logoSize]}
             mb='20px'
           />
           <Text fontSize='sm' className={styles.contentItem}>
