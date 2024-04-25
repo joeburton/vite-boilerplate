@@ -6,7 +6,7 @@ import theme from "./theme";
 
 import Root from "./routes/root/root";
 import Work from "./routes/work/work";
-import Contact from "./routes/contact/contact";
+import Contact from "./routes/contact/Contact.1";
 
 import ErrorPage from "./pages/error-page";
 

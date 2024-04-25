@@ -1,5 +1,4 @@
 .cardBody p {
-  border-top: dashed 1px #ccc;
   padding: 8px 0 8px 0;
   color: #393934;
 }
@@ -7,6 +6,14 @@
 .cardBody a {
   display: flex;
   border-top: dashed 1px #ccc;
-  padding: 8px 0 0 0;
+  padding: 8px 0 8px 0;
   color: #393934;
+}
+
+.cardBody a:last-child {
+  padding: 8px 0 0 0;
+}
+
+.contentItem {
+  border-top: dashed 1px #ccc;
 }

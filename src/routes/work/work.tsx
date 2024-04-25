@@ -1,15 +1,14 @@
-import { Text } from "@chakra-ui/react";
-import styles from "./work.module.css";
+import { Text, Flex } from "@chakra-ui/react";
 
 import { DisplayItem } from "../../components/DisplayItem";
+import { DisplayItemInterface } from "../../components/DisplayItem";
+import { generateUniqueId } from "../../utils";
+
+import { projects } from "../../../mocks/projects"; // temp data, will fetch from api
+
+import styles from "./work.module.css";
 
 export default function Work() {
-  const links = [
-    {
-      visual: "www.publicissapient.com",
-      url: "https://www.publicissapient.com",
-    },
-  ];
   return (
     <div className={styles.work}>
       <Text
@@ -21,15 +20,18 @@ export default function Work() {
       >
         Work and Projects
       </Text>
-      <DisplayItem
-        logo='publicissapient.png'
-        role='Manager / Front-end Lead'
-        company='Publicis Sapient'
-        description='<p>Hands-on Front-end Lead / People Manager</p>'
-        skills='React, Remix, Vite, NodeJS, GraphQL, NextJS, Jest, React Testing Library, styled-components, Storybook, CSS, SASS'
-        className='publicis-sapient'
-        links={links}
-      />
+      <Flex flexWrap='wrap'>
+        {projects.map((project: DisplayItemInterface, i: number) => {
+          const rowEnd = (i + 1) % 3 === 0 ? true : false; // every third item.
+          return (
+            <DisplayItem
+              {...project}
+              key={generateUniqueId()}
+              rowEnd={rowEnd}
+            />
+          );
+        })}
+      </Flex>
     </div>
   );
 }

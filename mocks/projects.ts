@@ -1,4 +1,4 @@
-export default [
+export const projects = [
   {
     order: 20,
     logo: "publicissapient.png",
@@ -6,7 +6,7 @@ export default [
     company: "Publicis Sapient",
     description: "<p>Hands-on Front-end Lead / People Manager</p>",
     skills:
-      "React, Remix, Vite, NodeJS, GraphQL, NextJS, Jest, React Testing Library, styled-components, Storybook, CSS, SASS",
+      "React&#44; Remix&#44; Vite&#44; NodeJS&#44; GraphQL&#44; NextJS&#44; Jest&#44; React Testing Library&#44; styled-components&#44; Storybook&#44; CSS&#44; SASS",
     className: "publicis-sapient",
     links: [
       {
