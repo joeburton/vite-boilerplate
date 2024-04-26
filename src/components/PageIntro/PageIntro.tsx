@@ -1,6 +1,6 @@
-import styles from "./Header.module.css";
 import { Text } from "@chakra-ui/react";
 
+import styles from "./PageIntro.module.css";
 import ruleImage from "../../assets/line.png";
 
 const rule = {
@@ -8,33 +8,45 @@ const rule = {
   backgroundPosition: "left 40px",
 };
 
-export const Header = () => {
+interface PageIntroInterface {
+  pageTitle: string;
+  subText: string | React.ReactNode;
+  detail: string | React.ReactNode;
+}
+
+export const PageIntro = ({
+  pageTitle,
+  subText,
+  detail,
+}: PageIntroInterface) => {
   return (
-    <div className={styles.header}>
+    <div className={styles.pageIntro}>
       <Text
         fontSize='5xl'
         fontWeight='slim'
         textAlign='center'
         style={rule}
-        className={styles.welcome}
+        className={styles.intro}
       >
-        <span>Welcome</span>
+        <span>{pageTitle}</span>
       </Text>
       <Text
+        as='div'
         fontSize='2xl'
         fontWeight='slim'
         className={styles.introText}
         textAlign='center'
       >
-        My name is <span>Joe Burton</span>, I'm a Web Developer.
+        {subText}
       </Text>
       <Text
+        as='div'
         fontSize='2xl'
         fontWeight='slim'
         className={styles.introText}
         textAlign='center'
       >
-        This is my portfolio and online playground.
+        {detail}
       </Text>
     </div>
   );

@@ -9,46 +9,14 @@ import {
 
 import { Form, Formik, Field, FieldProps } from "formik";
 
+import {
+  validateName,
+  validateEmail,
+  validatePhoneNumber,
+  validateMessage,
+} from "./validation";
+
 export const FormikContactForm = () => {
-  function validateName(value: string) {
-    let error;
-    if (!value) {
-      error = "Name is required";
-    } else if (value === "King Kong") {
-      error = "What the heck 😱";
-    }
-    return error;
-  }
-
-  function validateEmail(value: string) {
-    let error;
-    const reg = /\S+@\S+\.\S+/;
-    if (!value) {
-      error = "Email is required";
-    } else if (!reg.test(value)) {
-      error = "Invalid email address";
-    }
-    return error;
-  }
-
-  function validatePhoneNumber(value: string) {
-    let error;
-    if (!value) {
-      error = "Phone number is required";
-    } else if (!/^\d+$/.test(value)) {
-      error = "Phone number must be digits only";
-    }
-    return error;
-  }
-
-  function validateMessage(value: string) {
-    let error;
-    if (!value) {
-      error = "Please provide a short message 😱";
-    }
-    return error;
-  }
-
   return (
     <Formik
       initialValues={{ name: "", email: "", phoneNumber: "", message: "" }}
@@ -65,8 +33,11 @@ export const FormikContactForm = () => {
             {({ field, form }: FieldProps) => (
               <FormControl
                 isInvalid={!!(form.errors?.name && form.touched?.name)}
+                mb='20px'
               >
-                <FormLabel htmlFor='name'>Name</FormLabel>
+                <FormLabel htmlFor='name' fontWeight='normal' color='#393934'>
+                  Name
+                </FormLabel>
                 <Input
                   {...field}
                   placeholder='name'
@@ -85,8 +56,11 @@ export const FormikContactForm = () => {
             {({ field, form }: FieldProps) => (
               <FormControl
                 isInvalid={!!(form.errors?.email && form.touched?.email)}
+                mb='20px'
               >
-                <FormLabel htmlFor='email'>Email</FormLabel>
+                <FormLabel htmlFor='email' fontWeight='normal' color='#393934'>
+                  Email
+                </FormLabel>
                 <Input
                   {...field}
                   id='email'
@@ -107,8 +81,15 @@ export const FormikContactForm = () => {
                 isInvalid={
                   !!(form.errors?.phoneNumber && form.touched?.phoneNumber)
                 }
+                mb='20px'
               >
-                <FormLabel htmlFor='phoneNumber'>Phone Number</FormLabel>
+                <FormLabel
+                  htmlFor='phoneNumber'
+                  fontWeight='normal'
+                  color='#393934'
+                >
+                  Phone Number
+                </FormLabel>
                 <Input
                   {...field}
                   id='phoneNumber'
@@ -128,8 +109,15 @@ export const FormikContactForm = () => {
             {({ field, form }: FieldProps) => (
               <FormControl
                 isInvalid={!!(form.errors?.message && form.touched?.message)}
+                mb='20px'
               >
-                <FormLabel htmlFor='message'>Message</FormLabel>
+                <FormLabel
+                  htmlFor='message'
+                  fontWeight='normal'
+                  color='#393934'
+                >
+                  Message
+                </FormLabel>
                 <Textarea {...field} id='message' placeholder='message' />
                 <FormErrorMessage>
                   {typeof form.errors?.message === "string"
@@ -140,12 +128,22 @@ export const FormikContactForm = () => {
             )}
           </Field>
           <Button
-            mt={4}
+            m='1rem 1rem 0 0'
             colorScheme='teal'
             isLoading={props.isSubmitting}
             type='submit'
+            variant='outline'
           >
             Submit
+          </Button>
+          <Button
+            mt='1rem'
+            colorScheme='teal'
+            isLoading={props.isSubmitting}
+            type='reset'
+            variant='outline'
+          >
+            Reset
           </Button>
         </Form>
       )}
