@@ -66,7 +66,7 @@ export const DisplayItem = ({
           minHeight={{ base: "auto", lg: "500px" }}
         >
           <Image
-            src={getImageUrl(logo)}
+            src={getImageUrl("../assets/logos/", logo)}
             alt='Publicis Sapient'
             maxWidth={logoPixelWidth[logoSize]}
             mb='20px'

@@ -1,16 +1,8 @@
-import {
-  Card,
-  Image,
-  Text,
-  CardBody,
-  Box,
-  Grid,
-  GridItem,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import { Card, Image, Text, CardBody, Box, SimpleGrid } from "@chakra-ui/react";
 import { FormikContactForm } from "../../components/FormikContactForm";
 import { PageIntro } from "../../components/PageIntro";
-import carrierPigeon from "../../assets/carrier-pigeon.png";
+import { generateUniqueId, getImageUrl } from "../../utils";
+import { pigeons } from "../../../mocks/pigeons";
 import styles from "./contact.module.css";
 
 export default function Contact() {
@@ -47,14 +39,20 @@ export default function Contact() {
         <Box maxWidth={"900px"} m='0 auto'>
           <Card variant='elevated'>
             <CardBody>
-              <SimpleGrid columns={[1, 1, 2]} spacing={10}>
-                <Box m='0 0 20px 0'>
-                  <Image
-                    objectFit='cover'
-                    src={carrierPigeon}
-                    alt='Carrier pigeon, the old ways are the best ways. This image was generated using AI 🤓 how ironic.'
-                  />
-                </Box>
+              <SimpleGrid columns={[1, 1, 1, 2]} spacing={10}>
+                <SimpleGrid columns={[4, 4, 4, 3]} spacing={1}>
+                  {pigeons.map((pigeon: string) => (
+                    <Box height='auto' key={generateUniqueId()}>
+                      <Image
+                        src={getImageUrl(
+                          "../assets/pigeons-ai/resized/",
+                          pigeon
+                        )}
+                        alt='Cliché image of a carrier pigeon. This image was generated using AI 🤓 how ironic.'
+                      />
+                    </Box>
+                  ))}
+                </SimpleGrid>
                 <Box>
                   <FormikContactForm />
                 </Box>

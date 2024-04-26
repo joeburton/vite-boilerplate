@@ -33,7 +33,7 @@ export const FormikContactForm = () => {
             {({ field, form }: FieldProps) => (
               <FormControl
                 isInvalid={!!(form.errors?.name && form.touched?.name)}
-                mb='20px'
+                mb='25px'
               >
                 <FormLabel htmlFor='name' fontWeight='normal' color='#393934'>
                   Name
@@ -44,7 +44,7 @@ export const FormikContactForm = () => {
                   id='name'
                   autoComplete='off'
                 />
-                <FormErrorMessage>
+                <FormErrorMessage position='absolute' m='4px 0 8px 0'>
                   {typeof form.errors?.name === "string"
                     ? form.errors.name
                     : ""}
@@ -56,7 +56,7 @@ export const FormikContactForm = () => {
             {({ field, form }: FieldProps) => (
               <FormControl
                 isInvalid={!!(form.errors?.email && form.touched?.email)}
-                mb='20px'
+                mb='25px'
               >
                 <FormLabel htmlFor='email' fontWeight='normal' color='#393934'>
                   Email
@@ -67,7 +67,7 @@ export const FormikContactForm = () => {
                   placeholder='email'
                   autoComplete='off'
                 />
-                <FormErrorMessage>
+                <FormErrorMessage position='absolute' m='4px 0 8px 0'>
                   {typeof form.errors?.email === "string"
                     ? form.errors.email
                     : ""}
@@ -81,7 +81,7 @@ export const FormikContactForm = () => {
                 isInvalid={
                   !!(form.errors?.phoneNumber && form.touched?.phoneNumber)
                 }
-                mb='20px'
+                mb='25px'
               >
                 <FormLabel
                   htmlFor='phoneNumber'
@@ -97,7 +97,7 @@ export const FormikContactForm = () => {
                   autoComplete='off'
                   type='number'
                 />
-                <FormErrorMessage>
+                <FormErrorMessage position='absolute' m='4px 0 8px 0'>
                   {typeof form.errors?.phoneNumber === "string"
                     ? form.errors.phoneNumber
                     : ""}
@@ -109,7 +109,7 @@ export const FormikContactForm = () => {
             {({ field, form }: FieldProps) => (
               <FormControl
                 isInvalid={!!(form.errors?.message && form.touched?.message)}
-                mb='20px'
+                mb='25px'
               >
                 <FormLabel
                   htmlFor='message'
@@ -119,7 +119,7 @@ export const FormikContactForm = () => {
                   Message
                 </FormLabel>
                 <Textarea {...field} id='message' placeholder='message' />
-                <FormErrorMessage>
+                <FormErrorMessage position='absolute' m='4px 0 8px 0'>
                   {typeof form.errors?.message === "string"
                     ? form.errors.message
                     : ""}
@@ -136,13 +136,7 @@ export const FormikContactForm = () => {
           >
             Submit
           </Button>
-          <Button
-            mt='1rem'
-            colorScheme='teal'
-            isLoading={props.isSubmitting}
-            type='reset'
-            variant='outline'
-          >
+          <Button mt='1rem' colorScheme='teal' type='reset' variant='outline'>
             Reset
           </Button>
         </Form>
