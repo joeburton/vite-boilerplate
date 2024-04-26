@@ -229,7 +229,7 @@ export const projects = [
     logoSize: "medium",
     role: "Front-end Developer",
     company: "Freelance",
-    description: "Tyrrells Crisps",
+    description: "<p>Tyrrells Crisps</p>",
     skills: "JavaScript/jQuery&#44; XHTML&#44; CSS3",
     className: "tyrrells-logo",
     links: [

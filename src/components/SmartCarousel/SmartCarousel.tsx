@@ -23,24 +23,27 @@ const CarouselItem = ({ image, description }: Item) => {
 export const SmartCarousel = ({ items }: CarouselInterface) => {
   const [itemPosition, setItemPosition] = useState<number>(0);
 
-  const eleRef = useRef(null) as any;
+  const eleRef = useRef<HTMLInputElement>(null);
+  const eleRefStyle = eleRef.current?.style;
 
   const previous = () => {
     if (itemPosition === 0) return;
-    eleRef.current.style.transform = `translateX(-${itemPosition - 1}00%)`;
+    if (eleRefStyle)
+      eleRefStyle.transform = `translateX(-${itemPosition - 1}00%)`;
     setItemPosition((prevState) => prevState - 1);
   };
 
   const next = () => {
     if (itemPosition === items.length - 1) return;
-    eleRef.current.style.transform = `translateX(-${itemPosition + 1}00%)`;
+    if (eleRefStyle)
+      eleRefStyle.transform = `translateX(-${itemPosition + 1}00%)`;
     setItemPosition((prevState) => prevState + 1);
   };
 
   const moveSlideToNewPos = (slidePos: number) => {
     console.log(slidePos);
     if (itemPosition === slidePos) return;
-    eleRef.current.style.transform = `translateX(-${slidePos}00%)`;
+    if (eleRefStyle) eleRefStyle.transform = `translateX(-${slidePos}00%)`;
 
     setItemPosition(slidePos);
   };

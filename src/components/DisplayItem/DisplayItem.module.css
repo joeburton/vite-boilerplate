@@ -1,4 +1,5 @@
-.cardBody p {
+.cardBody p,
+.cardBody a {
   padding: 8px 0 8px 0;
   color: #393934;
 }

@@ -6,7 +6,7 @@ import { Carousel } from "./components/Carousel";
 import { SmartCarousel } from "./components/SmartCarousel";
 import { items } from "../mocks/data";
 
-function ErrorFallback({ error }: { error: any }) {
+function ErrorFallback({ error }: { error: Error }) {
   const { resetBoundary } = useErrorBoundary();
 
   return (

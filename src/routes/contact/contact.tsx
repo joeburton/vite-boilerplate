@@ -1,14 +1,5 @@
-import {
-  Box,
-  Card,
-  CardBody,
-  CardHeader,
-  Flex,
-  Link,
-  Stack,
-  StackDivider,
-  Text,
-} from "@chakra-ui/react";
+import { Card, Flex, Text, CardBody } from "@chakra-ui/react";
+import { FormikContactForm } from "../../components/FormikContactForm";
 
 import styles from "./contact.module.css";
 
@@ -20,34 +11,14 @@ export default function Contact() {
         fontWeight='slim'
         textAlign='center'
         color='#95c50e'
-        mb='6'
+        m='10px 0 30px 0'
       >
-        Contact
+        Get in touch
       </Text>
-      <Flex justifyContent='center'>
-        <Card maxWidth='300px'>
-          <CardHeader>
-            <Text fontSize='lg'>Please feel free to contact me anytime.</Text>
-          </CardHeader>
+      <Flex flexWrap='wrap'>
+        <Card variant='elevated' margin='0 auto'>
           <CardBody>
-            <Stack divider={<StackDivider />} spacing='4'>
-              <Box>
-                <Text fontSize='md' fontWeight='bold'>
-                  Email
-                </Text>
-                <Text fontSize='md'>
-                  <Link href='mailto:joeburton@gmail.com'>
-                    joeburton@gmail.com
-                  </Link>
-                </Text>
-              </Box>
-              <Box>
-                <Text fontSize='md' fontWeight='bold'>
-                  Phone
-                </Text>
-                <Text fontSize='md'>+ 44 [0] 77689 89321</Text>
-              </Box>
-            </Stack>
+            <FormikContactForm />
           </CardBody>
         </Card>
       </Flex>

@@ -1,22 +1,22 @@
+import { useState } from "react";
+import parse from "html-react-parser";
 import { Card, Image, CardBody, Text, Link, Box } from "@chakra-ui/react";
 import {
   ExternalLinkIcon,
   ChevronDownIcon,
   ChevronUpIcon,
 } from "@chakra-ui/icons";
-import parse from "html-react-parser";
 
 import { generateUniqueId, getImageUrl } from "../../utils";
 
 import styles from "./DisplayItem.module.css";
-import { useState } from "react";
 
 interface Links {
   visual: string;
   url: string;
 }
 
-type LogoSize = "small" | "medium" | "large";
+export type LogoSize = "small" | "medium" | "large";
 
 const logoPixelWidth: { [K in LogoSize]: string } = {
   small: "80px",
@@ -48,6 +48,9 @@ export const DisplayItem = ({
   links,
 }: DisplayItemInterface) => {
   const [open, setOpen] = useState(false);
+
+  console.log(description.length);
+  const constrainContent = description.length > 300 ? true : false;
 
   return (
     <Box width={{ base: "100%", lg: "33.3%" }}>
@@ -81,19 +84,21 @@ export const DisplayItem = ({
             as='div'
             fontSize='sm'
             className={`${styles.contentItem} ${styles.description} `}
-            style={{ height: open ? `100%` : `70px` }}
+            style={constrainContent ? { height: open ? `100%` : `70px` } : {}}
           >
             {parse(description)}
           </Text>
-          <Link
-            fontSize='sm'
-            display='block'
-            p='8px 0'
-            onClick={() => setOpen(!open)}
-          >
-            Expand{" "}
-            {open ? <ChevronUpIcon mx='6px' /> : <ChevronDownIcon mx='6px' />}
-          </Link>
+          {constrainContent && (
+            <Link
+              fontSize='sm'
+              display='block'
+              p='8px 0'
+              onClick={() => setOpen(!open)}
+            >
+              Expand
+              {open ? <ChevronUpIcon mx='6px' /> : <ChevronDownIcon mx='6px' />}
+            </Link>
+          )}
           {links?.length &&
             links.map((link) => (
               <Link
