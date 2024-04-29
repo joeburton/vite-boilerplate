@@ -7,6 +7,7 @@ import theme from "./theme";
 import Root from "./routes/root/root";
 import Work from "./routes/work/work";
 import Contact from "./routes/contact/contact";
+import Exp from "./routes/exp/exp";
 
 import ErrorPage from "./pages/error-page";
 
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "experiments",
+        element: <Exp />,
       },
     ],
   },

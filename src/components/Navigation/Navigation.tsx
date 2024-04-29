@@ -38,6 +38,16 @@ export const Navigation = () => {
             Contact
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to={`experiments`}
+            className={({ isActive, isPending }) =>
+              isActive ? styles.active : isPending ? "pending" : ""
+            }
+          >
+            Experiments
+          </NavLink>
+        </li>
       </ul>
       <button
         className={styles.logo}

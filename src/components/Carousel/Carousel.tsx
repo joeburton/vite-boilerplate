@@ -20,8 +20,6 @@ export const Carousel = () => {
     );
   };
 
-  console.log(currentIndex);
-
   return (
     <>
       <div className={styles.carousel}>

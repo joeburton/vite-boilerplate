@@ -49,7 +49,7 @@ export const DisplayItem = ({
 }: DisplayItemInterface) => {
   const [open, setOpen] = useState(false);
 
-  console.log(description.length);
+  // console.log(description.length);
   const constrainContent = description.length > 300 ? true : false;
 
   return (

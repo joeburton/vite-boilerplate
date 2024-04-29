@@ -7,7 +7,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 
-import { Form, Formik, Field, FieldProps } from "formik";
+import { Formik, Form, Field, FieldProps } from "formik";
 
 import {
   validateName,
@@ -118,7 +118,12 @@ export const FormikContactForm = () => {
                 >
                   Message
                 </FormLabel>
-                <Textarea {...field} id='message' placeholder='message' />
+                <Textarea
+                  {...field}
+                  id='message'
+                  placeholder='message'
+                  minHeight='150px'
+                />
                 <FormErrorMessage position='absolute' m='4px 0 8px 0'>
                   {typeof form.errors?.message === "string"
                     ? form.errors.message

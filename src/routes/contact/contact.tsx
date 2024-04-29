@@ -1,11 +1,17 @@
-import { Card, Image, Text, CardBody, Box, SimpleGrid } from "@chakra-ui/react";
+import { Card, Text, CardBody, Box, SimpleGrid, Image } from "@chakra-ui/react";
+
 import { FormikContactForm } from "../../components/FormikContactForm";
 import { PageIntro } from "../../components/PageIntro";
-import { generateUniqueId, getImageUrl } from "../../utils";
+
+import { getImageUrl } from "../../utils";
+import { useRandomArrayItems } from "../../hooks";
 import { pigeons } from "../../../mocks/pigeons";
+
 import styles from "./contact.module.css";
 
 export default function Contact() {
+  const [randomItems] = useRandomArrayItems(pigeons, 3);
+  console.log(randomItems instanceof Array);
   return (
     <>
       <PageIntro
@@ -13,8 +19,8 @@ export default function Contact() {
         subText={
           <>
             Please feel free to contact me anytime.
-            <br /> You're welcome to email me, call or just drop me a message
-            using the form below.
+            <br /> You're welcome to email me, call, or drop me a message using
+            the form below.
           </>
         }
         detail={
@@ -40,19 +46,28 @@ export default function Contact() {
           <Card variant='elevated'>
             <CardBody>
               <SimpleGrid columns={[1, 1, 1, 2]} spacing={10}>
-                <SimpleGrid columns={[4, 4, 4, 3]} spacing={1}>
-                  {pigeons.map((pigeon: string) => (
-                    <Box height='auto' key={generateUniqueId()}>
-                      <Image
-                        src={getImageUrl(
-                          "../assets/pigeons-ai/resized/",
-                          pigeon
-                        )}
-                        alt='Cliché image of a carrier pigeon. This image was generated using AI 🤓 how ironic.'
-                      />
-                    </Box>
-                  ))}
-                </SimpleGrid>
+                <Box>
+                  <Image
+                    src={getImageUrl(
+                      "../assets/",
+                      "pigeons-ai/resized/carrier-pigeon-ai-10.png"
+                    )}
+                    alt='Cliché image of a carrier pigeon. This image was generated using AI 🤓 how ironic.'
+                  />
+                  <SimpleGrid columns={[3]} spacing='10px' mt='10px'>
+                    {randomItems instanceof Array &&
+                      randomItems.map((item: string) => (
+                        <Image
+                          src={getImageUrl(
+                            "../assets/",
+                            `pigeons-ai/resized/${item}`
+                          )}
+                          alt='Cliché image of a carrier pigeon. This image was generated using AI 🤓 how ironic.'
+                          key={item}
+                        />
+                      ))}
+                  </SimpleGrid>
+                </Box>
                 <Box>
                   <FormikContactForm />
                 </Box>

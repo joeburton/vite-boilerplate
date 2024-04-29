@@ -19,7 +19,6 @@ interface RouteError {
 
 export default function ErrorPage() {
   const error = useRouteError() as RouteError;
-  console.error(error);
 
   return (
     <div className={styles.errorPage}>

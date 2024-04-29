@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { ChevronRight, ChevronLeft } from "react-bootstrap-icons";
 
 import styles from "./SmartCarousel.module.css";
@@ -23,28 +23,18 @@ const CarouselItem = ({ image, description }: Item) => {
 export const SmartCarousel = ({ items }: CarouselInterface) => {
   const [itemPosition, setItemPosition] = useState<number>(0);
 
-  const eleRef = useRef<HTMLInputElement>(null);
-  const eleRefStyle = eleRef.current?.style;
-
   const previous = () => {
     if (itemPosition === 0) return;
-    if (eleRefStyle)
-      eleRefStyle.transform = `translateX(-${itemPosition - 1}00%)`;
     setItemPosition((prevState) => prevState - 1);
   };
 
   const next = () => {
     if (itemPosition === items.length - 1) return;
-    if (eleRefStyle)
-      eleRefStyle.transform = `translateX(-${itemPosition + 1}00%)`;
     setItemPosition((prevState) => prevState + 1);
   };
 
   const moveSlideToNewPos = (slidePos: number) => {
-    console.log(slidePos);
     if (itemPosition === slidePos) return;
-    if (eleRefStyle) eleRefStyle.transform = `translateX(-${slidePos}00%)`;
-
     setItemPosition(slidePos);
   };
 
@@ -54,7 +44,12 @@ export const SmartCarousel = ({ items }: CarouselInterface) => {
         <div className={styles.left} onClick={previous}>
           <ChevronLeft color='white' size={20} />
         </div>
-        <ul className={styles.items} ref={eleRef}>
+        <ul
+          className={styles.items}
+          style={{
+            transform: `translateX(-${itemPosition}00%)`,
+          }}
+        >
           {items.map((item, i) => (
             <CarouselItem {...item} key={i} />
           ))}
