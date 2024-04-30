@@ -19,6 +19,11 @@
 }
 
 .introText span,
+.introText a,
 .introText li {
   color: #95c50e;
+}
+
+.introText a {
+  text-decoration: underline;
 }

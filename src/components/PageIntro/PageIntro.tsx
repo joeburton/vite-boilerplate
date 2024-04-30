@@ -11,7 +11,7 @@ const rule = {
 interface PageIntroInterface {
   pageTitle: string;
   subText: string | React.ReactNode;
-  detail: string | React.ReactNode;
+  detail?: string | React.ReactNode;
 }
 
 export const PageIntro = ({
@@ -39,15 +39,17 @@ export const PageIntro = ({
       >
         {subText}
       </Text>
-      <Text
-        as='div'
-        fontSize='2xl'
-        fontWeight='slim'
-        className={styles.introText}
-        textAlign='center'
-      >
-        {detail}
-      </Text>
+      {detail && (
+        <Text
+          as='div'
+          fontSize='2xl'
+          fontWeight='slim'
+          className={styles.introText}
+          textAlign='center'
+        >
+          {detail}
+        </Text>
+      )}
     </div>
   );
 };

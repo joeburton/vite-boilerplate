@@ -61,6 +61,7 @@ export const Navigation = () => {
         boxSize='50px'
         src={getImageUrl("../assets/", `me.jpg`)}
         alt='Joe Burton'
+        onClick={openLogin}
       />
     </nav>
   );

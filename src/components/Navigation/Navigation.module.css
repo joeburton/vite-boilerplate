@@ -28,6 +28,16 @@ a.homeIcon {
   margin-left: 10px;
 }
 
+a.homeIcon {
+  transition: fill 0.3s;
+  fill: white;
+}
+
+a.homeIcon:hover {
+  transition: fill 0.3s;
+  fill: yellow;
+}
+
 .navigation ul li a.active {
   text-decoration: underline;
   text-underline-offset: 3px;

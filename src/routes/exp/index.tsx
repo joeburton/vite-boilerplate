@@ -38,19 +38,10 @@ export default function Contact() {
     <>
       <PageIntro
         pageTitle='Experiments'
-        subText={<>Just playing around</>}
-        detail="Don't take things too seriously here"
+        subText={<>Just playing around.</>}
+        detail="Don't take things too seriously here."
       />
       <div className={styles.experiments}>
-        <Text
-          fontSize='3xl'
-          fontWeight='slim'
-          textAlign='center'
-          color='#95c50e'
-          m='10px 0 30px 0'
-        >
-          What to make next
-        </Text>
         <Box maxWidth={"900px"} m='0 auto'>
           <Card variant='elevated'>
             <CardBody>

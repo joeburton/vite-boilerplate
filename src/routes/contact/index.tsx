@@ -23,34 +23,17 @@ export default function Contact() {
     <>
       <PageIntro
         pageTitle='Contact'
-        subText={
+        subText={<>Please feel free to contact me anytime.</>}
+        detail={
           <>
-            Please feel free to contact me anytime.
-            <br /> You're welcome to email me, call, or drop me a message using
+            You can email{" "}
+            <a href='mailto:joeburton@gmail.com'>joeburton@gmail.com</a>,
+            telephone <a href='tel:+447768989321'>+ 44 (0) 7768989321</a> or use
             the form below.
           </>
         }
-        detail={
-          <ul>
-            <li>
-              e: <a href='mailto:joeburton@gmail.com'>joeburton@gmail.com</a>
-            </li>
-            <li>
-              t: <a href='tel:+447768989321'>+ 44 (0) 7768989321</a>
-            </li>
-          </ul>
-        }
       />
       <div className={styles.contact}>
-        <Text
-          fontSize='3xl'
-          fontWeight='slim'
-          textAlign='center'
-          color='#95c50e'
-          m='10px 0 30px 0'
-        >
-          Get in touch
-        </Text>
         <Box maxWidth={"900px"} m='0 auto'>
           <Card variant='elevated'>
             <CardBody>
