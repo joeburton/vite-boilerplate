@@ -6,7 +6,7 @@
 }
 
 .customList li {
-  border-bottom: 1px dashed #ccc;
+  /* border-bottom: 1px dashed #ccc; */
   padding-bottom: 4px;
   margin-bottom: 24px;
 }

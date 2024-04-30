@@ -3,6 +3,9 @@ import { NavLink } from "react-router-dom";
 import styles from "./Navigation.module.css";
 
 import meImage from "../../assets/me.jpg";
+import { Home } from "../CustomIcons";
+import { Icon, Image } from "@chakra-ui/react";
+import { getImageUrl } from "../../utils";
 
 const spinningMe = {
   background: `url(${meImage}) 0 0`,
@@ -17,6 +20,9 @@ export const Navigation = () => {
 
   return (
     <nav className={styles.navigation}>
+      <NavLink to={`/`} className={styles.homeIcon}>
+        <Icon as={Home} width='20px' height='20px' mr='4px' />
+      </NavLink>
       <ul>
         <li>
           <NavLink
@@ -49,11 +55,13 @@ export const Navigation = () => {
           </NavLink>
         </li>
       </ul>
-      <button
+      <Image
         className={styles.logo}
-        style={spinningMe}
-        onClick={openLogin}
-      ></button>
+        borderRadius='full'
+        boxSize='50px'
+        src={getImageUrl("../assets/", `me.jpg`)}
+        alt='Joe Burton'
+      />
     </nav>
   );
 };

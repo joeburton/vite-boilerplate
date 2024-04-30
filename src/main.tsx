@@ -5,9 +5,10 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import theme from "./theme";
 
 import Root from "./routes/root/root";
-import Work from "./routes/work/work";
-import Contact from "./routes/contact/contact";
-import Exp from "./routes/exp/exp";
+import Work from "./routes/work";
+import Contact from "./routes/contact";
+import Exp from "./routes/exp";
+import Splash from "./routes/splash";
 
 import ErrorPage from "./pages/error-page";
 
@@ -21,11 +22,11 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        path: "work",
-        element: <Work />,
+        path: "/",
+        element: <Splash />,
       },
       {
-        path: "/",
+        path: "work",
         element: <Work />,
       },
       {
