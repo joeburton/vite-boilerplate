@@ -35,7 +35,9 @@ export default function Contact() {
             <li>
               e: <a href='mailto:joeburton@gmail.com'>joeburton@gmail.com</a>
             </li>
-            <li>t: + 44 (0) 7768989321</li>
+            <li>
+              t: <a href='tel:+447768989321'>+ 44 (0) 7768989321</a>
+            </li>
           </ul>
         }
       />

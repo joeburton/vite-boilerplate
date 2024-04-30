@@ -1,12 +1,11 @@
 .experiments {
-  background: #f0f0f0;
+  background: url("../../assets/splash-background.png") 0 0 / cover;
   border-bottom: 1px solid #ccc;
   min-height: 100px;
   padding: 20px;
 }
 
 .customList li {
-  /* border-bottom: 1px dashed #ccc; */
   padding-bottom: 4px;
   margin-bottom: 24px;
 }
