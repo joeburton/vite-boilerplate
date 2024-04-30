@@ -9,6 +9,10 @@ import {
   Image,
   Icon,
   Link,
+  Show,
+  List,
+  ListIcon,
+  ListItem,
 } from "@chakra-ui/react";
 import { ErrorBoundary } from "react-error-boundary";
 
@@ -21,14 +25,18 @@ import { items } from "../../../mocks/data";
 
 import { ErrorBoundaryFallback } from "../../components/ErrorBoundaryFallback";
 import { getImageUrl } from "../../utils";
-import { GitHubMark } from "../../components/CustomIcons";
+import { GitHubMark, LinkedIn } from "../../components/CustomIcons";
 
 import styles from "./exp.module.css";
+import { useRandomArrayItems } from "../../hooks";
+import { engineers } from "../../../mocks/engineers";
 
 export default function Contact() {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const experiments = urlParams.get("experiments");
+
+  const [randomItems] = useRandomArrayItems(engineers, 3);
   return (
     <>
       <PageIntro
@@ -50,38 +58,91 @@ export default function Contact() {
           <Card variant='elevated'>
             <CardBody>
               <SimpleGrid columns={[1, 1, 1, 2]} spacing={10}>
-                <Box height='auto'>
-                  <Image
-                    src={getImageUrl(
-                      "../assets/general/resized/",
-                      "ginger-software-engineer.png"
-                    )}
-                    alt='Cliché image of a carrier pigeon. This image was generated using AI 🤓 how ironic.'
-                  />
-                </Box>
                 <Box>
-                  <Box height='auto'>
-                    <ul>
-                      <li>
-                        <Text mb='10px'>
-                          Most of my pet projects and tech exploration code is
-                          dumped on GitHub. Feel free to have a look, you might
-                          even find some jQuery if you dig deep enough.
+                  <Show above='lg'>
+                    <Image
+                      src={getImageUrl(
+                        "../assets/",
+                        "ginger-software-engineer-ai/resized/ginger-software-engineer-ai-7.png"
+                      )}
+                      alt='Ginger Software Engineer'
+                    />
+                  </Show>
+                  <SimpleGrid columns={[3]} spacing='10px' mt='10px'>
+                    {randomItems instanceof Array &&
+                      randomItems.map((item: string) => (
+                        <Image
+                          src={getImageUrl(
+                            "../assets/",
+                            `ginger-software-engineer-ai/resized/${item}`
+                          )}
+                          alt='Cliché image of a carrier pigeon. This image was generated using AI 🤓 how ironic.'
+                          key={item}
+                        />
+                      ))}
+                  </SimpleGrid>
+                </Box>
+                <Box height='auto'>
+                  <ul className={styles.customList}>
+                    <li>
+                      <Text mb='2px'>
+                        Most of my pet projects and tech exploration code is
+                        dumped on GitHub. Feel free to have a look, you might
+                        even find some jQuery if you dig deep enough.
+                      </Text>
+                      <Link href='https://github.com/joeburton' isExternal>
+                        <Text>
+                          <Icon
+                            as={GitHubMark}
+                            width='20px'
+                            height='20px'
+                            mr='4px'
+                          />
+                          https://github.com/joeburton
                         </Text>
-                        <Link href='https://github.com/joeburton' isExternal>
-                          <Text>
-                            <Icon
-                              as={GitHubMark}
-                              width='20px'
-                              height='20px'
-                              mr='4px'
-                            />
-                            https://github.com/joeburton
-                          </Text>
-                        </Link>
-                      </li>
-                    </ul>
-                  </Box>
+                      </Link>
+                    </li>
+                    <li>
+                      <Text mb='2px'>
+                        For a full overview of my employment history please take
+                        a look at my LinkedIn profile.
+                      </Text>
+                      <Link
+                        href='https://www.linkedin.com/in/joeburton1979'
+                        isExternal
+                      >
+                        <Text>
+                          <Icon
+                            as={LinkedIn}
+                            width='20px'
+                            height='20px'
+                            mr='4px'
+                          />
+                          https://www.linkedin.com/in/joeburton1979
+                        </Text>
+                      </Link>
+                    </li>
+                  </ul>
+                  {/* <List>
+                    <ListItem>
+                      <ListIcon as={LinkedIn} color='green.500' />
+                      For a full overview of my employment history please take a
+                      look at my LinkedIn profile
+                      <Link
+                        href='https://www.linkedin.com/in/joeburton1979'
+                        isExternal
+                      ></Link>
+                    </ListItem>
+                    <ListItem>
+                      <ListIcon as={LinkedIn} color='green.500' />
+                      For a full overview of my employment history please take a
+                      look at my LinkedIn profile
+                      <Link
+                        href='https://www.linkedin.com/in/joeburton1979'
+                        isExternal
+                      ></Link>
+                    </ListItem>
+                  </List> */}
                 </Box>
               </SimpleGrid>
             </CardBody>
