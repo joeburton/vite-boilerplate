@@ -86,9 +86,9 @@ export default function Contact() {
                   <ul className={styles.customList}>
                     <li>
                       <Text mb='2px'>
-                        Most of my pet projects and tech exploration code is
-                        dumped on GitHub. Feel free to have a look, you might
-                        even find some jQuery if you dig deep enough.
+                        Most of my pet projects and tech exploration code is on
+                        GitHub. Feel free to have a look, you might even find
+                        some early jQuery if you dig deep enough.
                       </Text>
                       <Link href='https://github.com/joeburton' isExternal>
                         <Text>
