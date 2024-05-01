@@ -39,8 +39,8 @@ export const SmartCarousel = ({ items }: CarouselInterface) => {
   };
 
   return (
-    <>
-      <div data-testid='carousel' className={styles.carousel}>
+    <div data-testid='carousel'>
+      <div className={styles.carousel}>
         <div className={styles.left} onClick={previous}>
           <ChevronLeft color='white' size={20} />
         </div>
@@ -67,6 +67,6 @@ export const SmartCarousel = ({ items }: CarouselInterface) => {
           ></li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };

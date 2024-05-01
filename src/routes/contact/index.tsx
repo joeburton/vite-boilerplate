@@ -1,12 +1,4 @@
-import {
-  Card,
-  Text,
-  CardBody,
-  Box,
-  SimpleGrid,
-  Image,
-  Show,
-} from "@chakra-ui/react";
+import { Card, CardBody, Box, SimpleGrid, Image, Show } from "@chakra-ui/react";
 
 import { FormikContactForm } from "../../components/FormikContactForm";
 import { PageIntro } from "../../components/PageIntro";
@@ -48,7 +40,11 @@ export default function Contact() {
                       alt='Cliché image of a carrier pigeon. This image was generated using AI 🤓 how ironic.'
                     />
                   </Show>
-                  <SimpleGrid columns={[3]} spacing='10px' mt='10px'>
+                  <SimpleGrid
+                    columns={[3]}
+                    spacing='10px'
+                    mt={[0, 0, 0, "10px"]}
+                  >
                     {randomItems instanceof Array &&
                       randomItems.map((item: string) => (
                         <Image

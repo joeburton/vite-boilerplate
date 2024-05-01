@@ -56,7 +56,11 @@ export default function Contact() {
                       alt='Ginger Software Engineer'
                     />
                   </Show>
-                  <SimpleGrid columns={[3]} spacing='10px' mt='10px'>
+                  <SimpleGrid
+                    columns={[3]}
+                    spacing='10px'
+                    mt={[0, 0, 0, "10px"]}
+                  >
                     {randomItems instanceof Array &&
                       randomItems.map((item: string) => (
                         <Image
