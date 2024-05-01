@@ -16,6 +16,13 @@ export default extendTheme({
     heading: "Georgia, serif",
     mono: "Menlo, monospace",
   },
+  styles: {
+    global: () => ({
+      body: {
+        background: "#f0f0f0",
+      },
+    }),
+  },
   fontWeights: {
     slim: 300,
     normal: 400,

@@ -1,6 +1,3 @@
 .splashPage {
-  background: url("../../assets/splash-background.png") 0 0 / cover;
-  height: calc(100vh - 140px);
-  display: flex;
-  justify-content: center;
+  padding: 20px;
 }

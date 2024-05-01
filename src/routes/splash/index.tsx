@@ -8,11 +8,14 @@ import {
   SimpleGrid,
   Text,
   Link as ChakraLink,
+  Image,
+  Flex,
 } from "@chakra-ui/react";
 
 import { PageIntro } from "../../components/PageIntro";
 import styles from "./splash.module.css";
 import { ArrowForwardIcon } from "@chakra-ui/icons";
+import { getImageUrl } from "../../utils";
 
 export default function Splash() {
   return (
@@ -27,19 +30,64 @@ export default function Splash() {
         detail='This is my portfolio and online playground.'
       />
       <div className={styles.splashPage}>
-        <Box maxWidth={"900px"} m='0 auto'>
-          <Card variant='elevated' m='20px'>
+        <Box maxWidth={"720px"} m='0 auto'>
+          <Card variant='elevated'>
             <CardBody>
-              <SimpleGrid columns={[1, 1, 1, 2]} spacing={5}>
+              <Text mb='10px' fontSize='md'>
+                I have over 20 years of industry experience working as a
+                Developer, with much of the last 15 years focused on Front-end
+                Development. During this time, I have gained experience working
+                for a broad range of companies, from advertising agencies such
+                as{" "}
+                <ChakraLink
+                  href='https://www.ogilvy.com/uk/about'
+                  isExternal
+                  textDecoration='underline'
+                >
+                  Ogilvy & Mather
+                </ChakraLink>{" "}
+                and{" "}
+                <ChakraLink
+                  href='https://www.tribalworldwide.co.uk/'
+                  isExternal
+                  textDecoration='underline'
+                >
+                  Tribal Worldwide
+                </ChakraLink>
+                , to the travel sector for{" "}
+                <ChakraLink
+                  href='https://www.lastminute.com/'
+                  isExternal
+                  textDecoration='underline'
+                >
+                  lastminute.com
+                </ChakraLink>
+                .
+              </Text>
+            </CardBody>
+          </Card>
+          <Card variant='elevated' mt='20px'>
+            <CardBody>
+              <SimpleGrid columns={[1, 1, 2, 2]} spacing={5}>
+                <Box justifyContent='center'>
+                  <Image
+                    src={getImageUrl("../assets/", "joe-burton-framed.jpg")}
+                    borderRadius='full'
+                    boxSize='100%'
+                    maxWidth='300px'
+                  />
+                </Box>
                 <Box>
-                  <Text>
-                    I have over 15 years of industry experience, predominantly
-                    spent working as a Front-end Developer. During this time, I
-                    have gained experience working for a broad range of
-                    companies, from advertising agencies such as Ogilvy and
-                    Mather and Tribal Worldwide, to the travel sector for
-                    lastminute.com. I currently work for Publicis Sapient as a
-                    hands-on Front-end Lead/Manager.
+                  <Text fontStyle='italic'>
+                    I currently work for{" "}
+                    <ChakraLink
+                      href='https://www.publicissapient.com/'
+                      isExternal
+                      textDecoration='underline'
+                    >
+                      Publicis Sapient
+                    </ChakraLink>{" "}
+                    as a hands-on Front-end Lead/ Manager.
                   </Text>
                   <Box>
                     <ChakraLink
@@ -67,7 +115,6 @@ export default function Splash() {
                     </ChakraLink>
                   </Box>
                 </Box>
-                <Box>2</Box>
               </SimpleGrid>
             </CardBody>
           </Card>
