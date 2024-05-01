@@ -64,6 +64,17 @@ export default function Splash() {
                 </ChakraLink>
                 .
               </Text>
+              <Text fontStyle='italic'>
+                I currently work for{" "}
+                <ChakraLink
+                  href='https://www.publicissapient.com/'
+                  isExternal
+                  textDecoration='underline'
+                >
+                  Publicis Sapient
+                </ChakraLink>{" "}
+                as a hands-on Front-end Lead/ Manager.
+              </Text>
             </CardBody>
           </Card>
           <Card variant='elevated' mt='20px'>
@@ -75,20 +86,10 @@ export default function Splash() {
                     borderRadius='full'
                     boxSize='100%'
                     maxWidth='300px'
+                    border='3px solid silver'
                   />
                 </Box>
                 <Box>
-                  <Text fontStyle='italic'>
-                    I currently work for{" "}
-                    <ChakraLink
-                      href='https://www.publicissapient.com/'
-                      isExternal
-                      textDecoration='underline'
-                    >
-                      Publicis Sapient
-                    </ChakraLink>{" "}
-                    as a hands-on Front-end Lead/ Manager.
-                  </Text>
                   <Box>
                     <ChakraLink
                       as={ReactRouterLink}

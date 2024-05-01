@@ -35,7 +35,7 @@ a.homeIcon {
 
 a.homeIcon:hover {
   transition: fill 0.3s;
-  fill: yellow;
+  fill: #95c50e;
 }
 
 .navigation ul li a.active {
