@@ -36,13 +36,13 @@ export default function Splash() {
         detail='This is my portfolio and online playground.'
       />
       <div className={styles.splashPage}>
-        <Box maxWidth={"720px"} m='0 auto'>
+        <Box maxWidth={"768px"} m='0 auto'>
           <Card variant='elevated'>
             <CardBody>
               <Text mb='10px' fontSize='md'>
                 I have over 20 years of industry experience working as a
                 Developer, with much of the last 15 years focused on Front-end
-                Development. During this time, I have gained experience working
+                Development. During this time, I've gained experience working
                 for a broad range of companies, from advertising agencies such
                 as{" "}
                 <ChakraLink
@@ -82,16 +82,14 @@ export default function Splash() {
           </Card>
           <Card variant='elevated' mt='20px'>
             <CardBody>
-              <SimpleGrid columns={[1, 1, 2, 2]} spacing={5}>
-                <Flex justifyContent='center'>
-                  <Image
-                    src={getImageUrl("../assets/", "joe-burton-framed.jpg")}
-                    borderRadius='full'
-                    boxSize='100%'
-                    maxWidth='300px'
-                    border='3px solid silver'
-                  />
-                </Flex>
+              <SimpleGrid columns={[1, 2, 2, 2]} spacing={5}>
+                <Image
+                  src={getImageUrl("../assets/", "joe-burton-framed.jpg")}
+                  borderRadius='lg'
+                  boxSize='100%'
+                  border='3px solid silver'
+                  filter='grayscale(30%)'
+                />
                 <SimpleGrid columns={1}>
                   <List spacing={3} mb='10px'>
                     <ListItem>
@@ -131,7 +129,7 @@ export default function Splash() {
                       </Link>
                     </ListItem>
                   </List>
-                  <Flex alignItems='flex-end'>
+                  <Flex alignItems='flex-end' mt='20px'>
                     <ChakraLink
                       as={ReactRouterLink}
                       colorScheme='teal'
