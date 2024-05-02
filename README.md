@@ -1,4 +1,4 @@
-# React + TypeScript + Vite + Storybook
+# React + TypeScript + Vite + Storybook + Test Suite
 
 ### Create application
 
