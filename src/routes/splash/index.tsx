@@ -40,7 +40,7 @@ export default function Splash() {
           <Card variant='elevated'>
             <CardBody>
               <Text mb='10px' fontSize='md'>
-                I have over 20 years of industry experience working as a
+                I have over 20 years of industry experience working as a Web
                 Developer, with much of the last 15 years focused on Front-end
                 Development. During this time, I've gained experience working
                 for a broad range of companies, from advertising agencies such
