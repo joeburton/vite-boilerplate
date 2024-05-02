@@ -118,15 +118,13 @@ export default function Splash() {
                     </ListItem>
                     <ListItem>
                       <ListIcon as={HiMiniAtSymbol} />
-                      <Link href='mailto:joeburton@gmail.com' isExternal>
+                      <Link href='mailto:joeburton@gmail.com'>
                         joeburton@gmail.com
                       </Link>
                     </ListItem>
                     <ListItem>
                       <ListIcon as={HiMiniDevicePhoneMobile} />
-                      <Link href='tel:+447768989321' isExternal>
-                        + 44 (0) 7768989321
-                      </Link>
+                      <Link href='tel:+447768989321'>+ 44 (0) 7768989321</Link>
                     </ListItem>
                   </List>
                   <Flex alignItems='flex-end' mt='20px'>
