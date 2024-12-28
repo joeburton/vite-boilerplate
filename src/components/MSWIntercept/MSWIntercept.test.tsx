@@ -7,7 +7,7 @@ describe("MSWIntercept", () => {
   it("should render a list of data", async () => {
     const { getByText, findByTestId } = render(
       <ErrorBoundary fallback={<div>Something went wrong</div>}>
-        <MSWIntercept url='http://joe-burton.com/api/source' />
+        <MSWIntercept url="http://joe-burton.com/api/work" />
       </ErrorBoundary>
     );
 

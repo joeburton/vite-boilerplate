@@ -60,7 +60,7 @@ function App() {
         ]}
       />
       <ErrorBoundary FallbackComponent={ErrorFallback}>
-        <MSWIntercept url="https://joe-burton.com/api/work" />
+        <MSWIntercept url="http://joe-burton.com/api/work" />
       </ErrorBoundary>
     </>
   );
