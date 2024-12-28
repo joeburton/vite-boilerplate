@@ -23,16 +23,18 @@ const CarouselItem = ({ image, description }: Item) => {
 export const SmartCarousel = ({ items }: CarouselInterface) => {
   const [itemPosition, setItemPosition] = useState<number>(0);
 
-  const eleRef = useRef(null) as any;
+  const eleRef = useRef<HTMLUListElement>(null);
 
   const previous = () => {
     if (itemPosition === 0) return;
+    if (!eleRef.current) return;
     eleRef.current.style.transform = `translateX(-${itemPosition - 1}00%)`;
     setItemPosition((prevState) => prevState - 1);
   };
 
   const next = () => {
     if (itemPosition === items.length - 1) return;
+    if (!eleRef.current) return;
     eleRef.current.style.transform = `translateX(-${itemPosition + 1}00%)`;
     setItemPosition((prevState) => prevState + 1);
   };
@@ -47,9 +49,9 @@ export const SmartCarousel = ({ items }: CarouselInterface) => {
 
   return (
     <>
-      <div data-testid='carousel' className={styles.carousel}>
+      <div data-testid="carousel" className={styles.carousel}>
         <div className={styles.left} onClick={previous}>
-          <ChevronLeft color='white' size={20} />
+          <ChevronLeft color="white" size={20} />
         </div>
         <ul className={styles.items} ref={eleRef}>
           {items.map((item, i) => (
@@ -57,7 +59,7 @@ export const SmartCarousel = ({ items }: CarouselInterface) => {
           ))}
         </ul>
         <div className={styles.right} onClick={next}>
-          <ChevronRight color='white' size={20} />
+          <ChevronRight color="white" size={20} />
         </div>
       </div>
       <ul className={styles.tracker}>

@@ -5,7 +5,7 @@ import MSWIntercept from "./components/MSWIntercept/MSWIntercept";
 import { Carousel } from "./components/Carousel";
 import { SmartCarousel } from "./components/SmartCarousel";
 
-function ErrorFallback({ error }: { error: any }) {
+function ErrorFallback({ error }: { error: Error }) {
   const { resetBoundary } = useErrorBoundary();
 
   return (
