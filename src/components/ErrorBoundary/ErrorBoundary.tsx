@@ -20,11 +20,16 @@ const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
     };
   }, []);
 
+  const resetErrorBoundary = () => {
+    setHasError(false);
+  };
+
   if (hasError) {
     return (
       <div style={{ textAlign: "center", padding: "20px" }}>
         <h2>Something went wrong.</h2>
-        <p>Please refresh the page or try again later.</p>
+        <p>Please try again or refresh the page.</p>
+        <button onClick={resetErrorBoundary}>Try Again</button>
       </div>
     );
   }

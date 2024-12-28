@@ -23,10 +23,10 @@ const MSWIntercept = ({ url }: { url: string }) => {
     <>
       <h2>Fetch Data</h2>
 
-      <ul data-testid='select-list'>
+      <ul data-testid="select-list">
         {projects && Array.isArray(projects) && (
-          <div data-testid='list'>
-            <List data={projects} listName='Projects' />
+          <div data-testid="list">
+            <List data={projects} listName="Projects" />
           </div>
         )}
       </ul>
