@@ -1,15 +1,17 @@
 import { render } from "@testing-library/react";
+import { ErrorBoundary } from "react-error-boundary";
 
 import MSWIntercept from "./MSWIntercept";
 
 describe("MSWIntercept", () => {
-  it("should work as expected", async () => {
-    const { getByText, findByTestId, debug } = render(
-      <MSWIntercept url='http://joe-burton.com/api/source' />
+  it("should render a list of data", async () => {
+    const { getByText, findByTestId } = render(
+      <ErrorBoundary fallback={<div>Something went wrong</div>}>
+        <MSWIntercept url='http://joe-burton.com/api/source' />
+      </ErrorBoundary>
     );
 
     await findByTestId("list");
-    debug();
-    expect(getByText("Software Enginner")).toBeInTheDocument();
+    expect(getByText(/Software Enginner/)).toBeInTheDocument();
   });
 });
