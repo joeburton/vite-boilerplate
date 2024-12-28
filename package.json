@@ -14,6 +14,7 @@
     "vitest": "vitest --ui"
   },
   "dependencies": {
+    "@esbuild/darwin-arm64": "^0.24.2",
     "react": "^18.2.0",
     "react-bootstrap-icons": "^1.11.3",
     "react-dom": "^18.2.0",
